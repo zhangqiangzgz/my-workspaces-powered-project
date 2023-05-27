@@ -7,8 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "type": "module",
-  "keywords": [],
-  "author": "",
+  "keywords": ["npm", "npm link", "workspace", "workspaces"],
+  "author": "zhangqiangzgz",
   "license": "ISC",
   "workspaces": [
     "packages/a",
