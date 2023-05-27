@@ -4,14 +4,29 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install && npm run prepare:hooks",
+    "prepare:hooks": "npx husky set .husky/commit-msg \"npx commitlint --edit $1\""
   },
   "type": "module",
-  "keywords": ["npm", "npm link", "workspace", "workspaces"],
+  "keywords": [
+    "npm",
+    "npm link",
+    "workspace",
+    "workspaces"
+  ],
   "author": "zhangqiangzgz",
   "license": "ISC",
   "workspaces": [
     "packages/a",
     "packages/b"
-  ]
+  ],
+  "devDependencies": {
+    "@commitlint/cli": "^17.6.3",
+    "@commitlint/config-conventional": "^17.6.3",
+    "husky": "^8.0.0"
+  },
+  "commitlint": {
+    "extends": ["@commitlint/config-conventional"]
+  }
 }
